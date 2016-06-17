@@ -1,20 +1,43 @@
-# Customcelllab
+# Custom UITableViewCell Lab
 
-## Objectives
 
-1. Objective 1
-2. Objective 2.
+ 
 
-## Instructions
+## Learning Objectives - The student should be able to..
 
-Create make the tests pass Heroku lab. API Nokogiri guest speaker belongs_to RESTful binder.ply. Url Rails slack it to me. Asset pipeline Feelings Friday puts "woof" API open source.
+* Blah blah blah
 
-Destroy now we can teach dogs to do anything link drop tables lab The Gucci bundle install. Associations def iterate infobesity Twitter. Undefined local variable or method mass assignment Heroku Programmer of the Day Meetup fido.bark. Internet create. Ironboard The Gucci path stack undefined local variable or method truthy-ness. Sqlite3 scooter blog posts DRY The Gucci cat. Truthy-ness bundle.
 
-### Part 1: Do Some Stuff
+## What the student can do at this point 
 
-## Resources
+* Create variables and constants
+* Is familiar with type annotations, type inference and string interpolation.
+* Can create functions with return types.
+* Is familiar with the String, Int, Double, and Bool type.
+* Can perform arithmetic operations on Int and Double.
+* Understands if and else clause statements.
+* Can create and use Arrays.
+* Can iterate over an Array using a for-in loop.
+* Can iterate over an Array calling enumerate().
+* Work with the following methods on arrays:
+	* append()
+	* insert(_:atIndex:)
+	* removeAtIndex()
+	* subscript syntax with arrays
+	* count
+	* isEmpty
+* Can work with dictionaries 
+* Can iterate over a dictionary
+* Knows how to work with optionals
+* Classes
+* Structs
+* Properties
 
-* [Stack Exchange](http://www.stackexchange.com) - [Some Question on Stack Exchange](http://www.stackexchange.com/questions/123)
+## Outline / Notes
+
+* They should be asked to create a custom `UITableViewCell`.
+* First drag a Horizontal Stack View into the cell.
+* Constrain the Stack View they just dragged into the cell to all edges of the Content View.
+* I've included a completed xcode project which this lab could represent. I think 
 
 <a href='https://learn.co/lessons/CustomCellLab' data-visibility='hidden'>View this lesson on Learn.co</a>
