@@ -4,10 +4,9 @@
  
 > We must accept finite disappointment, but never lose infinite hope. ~[Martin Luther King, Jr.](https://en.wikipedia.org/wiki/Martin_Luther_King,_Jr.)
 
-## Learning Objectives - The student should be able to..
+## Learning Objectives
 
 * Complete this lab
-
 
 ## What the student can do at this point 
 
