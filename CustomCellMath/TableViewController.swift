@@ -40,49 +40,4 @@ class TableViewController: UITableViewController {
         return Int(arc4random_uniform(UInt32(number)) + 1)
     }
 
-
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numbers.count
-    }
-
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath) as! MathTableViewCell
-        
-        let currentRowOfNumbers = numbers[indexPath.row]
-        
-        let firstNumber = currentRowOfNumbers[0]
-        let secondNumber = currentRowOfNumbers[1]
-        let thirdNumber = currentRowOfNumbers[2]
-        let fourthNumber = currentRowOfNumbers[3]
-        
-        cell.firstNumberLabel.text = String(firstNumber)
-        cell.secondNumberLabel.text = String(secondNumber)
-        cell.thirdNumberLabel.text = String(thirdNumber)
-        cell.fourthNumberLabel.text = String(fourthNumber)
-        
-        return cell
-    }
- 
-
-    // MARK: - Navigation
-
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        let destVC = segue.destinationViewController as! DisplayMathViewController
-        
-        if let indexPath = tableView.indexPathForSelectedRow {
-            let selectedRow = numbers[indexPath.row]
-            destVC.numbers = selectedRow
-        }
-        
-    }
-
 }
