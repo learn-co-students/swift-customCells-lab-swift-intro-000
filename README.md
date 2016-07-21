@@ -14,11 +14,11 @@ Now that you've learned about custom table view cells, it's time to lay out your
 
 Here's what the initial view of your app should look like:
 
-<!-- screenshot -->
+![CustomCellMath: Main (table) view](https://s3.amazonaws.com/learn-verified/customcellmath-main.png)
 
 And here's an example of a detailed view:
 
-<!-- Screenshot -->
+![CustomCellMath: Detail view](https://s3.amazonaws.com/learn-verified/customcellmath-detail.png)
 
 You don't have to worry about the detailed view in this lab, as the view and code for that view have been given to you. In this lab, you'll be focusing on the implementation of the table view and, more importantly, the custom cells that make up that table view.
 
