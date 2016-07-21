@@ -35,6 +35,7 @@ class DisplayMathViewController: UIViewController {
         super.viewDidLoad()
         
         displayNumbersInCorrespondingLabels()
+        updateLabelsWithOperation(+)
         
     }
 
