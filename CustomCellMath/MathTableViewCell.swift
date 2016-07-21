@@ -14,5 +14,13 @@ class MathTableViewCell: UITableViewCell {
     @IBOutlet weak var secondNumberLabel: UILabel!
     @IBOutlet weak var thirdNumberLabel: UILabel!
     @IBOutlet weak var fourthNumberLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+
+    override func setSelected(selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
 
 }
