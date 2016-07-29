@@ -2,7 +2,7 @@
 
 ![Martin](http://i.imgur.com/8PU1o17.jpg?1)
  
-> We must accept finite disappointment, but never lose infinite hope. ~[Martin Luther King, Jr.](https://en.wikipedia.org/wiki/Martin_Luther_King,_Jr.)
+> We must accept finite disappointment, but never lose infinite hope. -[Martin Luther King, Jr.](https://en.wikipedia.org/wiki/Martin_Luther_King,_Jr.)
 
 ## Learning Objectives
 
