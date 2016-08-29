@@ -4,13 +4,13 @@
  
 > We must accept finite disappointment, but never lose infinite hope. -[Martin Luther King, Jr.](https://en.wikipedia.org/wiki/Martin_Luther_King,_Jr.)
 
-## Learning Objectives
+## Overview
 
-* Complete this lab
+In this lab, you'll lay out your own custom cells in an iOS app.
 
-## Directions
+## Instructions
 
-Now that you've learned about custom table view cells, it's time to lay out your own custom cells in an iOS app. In this lab, you are going to implement a table view-backed app. Each row (or cell) of the table view will display four numbers. Tapping on a cell will take you to another view, where you can select various math operations (addition, subtraction, multiplication, and division) and see the results of those operations on the numbers.
+In this lab, you are going to implement a table view-backed app. Each row (or cell) of the table view will display four numbers. Tapping on a cell will take you to another view, where you can select various math operations (addition, subtraction, multiplication, and division) and see the results of those operations on the numbers.
 
 Here's what the initial view of your app should look like:
 
