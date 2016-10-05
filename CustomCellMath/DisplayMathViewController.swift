@@ -31,44 +31,33 @@ class DisplayMathViewController: UIViewController {
     
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         
         displayNumbersInCorrespondingLabels()
         updateLabelsWithOperation(+)
-        
     }
 
-    @IBAction func additionTapped(sender: AnyObject) {
-        
+    @IBAction func additionTapped(_ sender: AnyObject) {
         updateLabelsWithOperation(+)
         operatorLabel.text = "+"
-        
     }
     
-    @IBAction func subtractionTapped(sender: AnyObject) {
-        
+    @IBAction func subtractionTapped(_ sender: AnyObject) {
         updateLabelsWithOperation(-)
         operatorLabel.text = "-"
-        
     }
     
-    @IBAction func multiplicationTapped(sender: AnyObject) {
-        
+    @IBAction func multiplicationTapped(_ sender: AnyObject) {
         updateLabelsWithOperation(*)
         operatorLabel.text = "x"
-        
     }
 
-    @IBAction func divisionTapped(sender: AnyObject) {
-        
+    @IBAction func divisionTapped(_ sender: AnyObject) {
         updateLabelsWithOperation(/)
         operatorLabel.text = "/"
-        
     }
     
     func displayNumbersInCorrespondingLabels() {
-        
         let numberLabels = [
             topLeftNumberLabel,
             topRightNumberLabel,
@@ -76,15 +65,13 @@ class DisplayMathViewController: UIViewController {
             bottomRightNumberLabel
         ]
         
-        for (index, number) in numbers.enumerate() {
+        for (index, number) in numbers.enumerated() {
             let correspondingLabel = numberLabels[index]
-            correspondingLabel.text = String(number)
+            correspondingLabel?.text = String(number)
         }
-        
     }
     
-    func updateLabelsWithOperation(operation: (Int, Int) -> Int) {
-        
+    func updateLabelsWithOperation(_ operation: (Int, Int) -> Int) {
         let upperLeftNumber = numbers[0]
         let upperRightNumber = numbers[1]
         let lowerLeftNumber = numbers[2]
@@ -98,7 +85,6 @@ class DisplayMathViewController: UIViewController {
         topRightLabel.text = String(operation(lowerRightNumber, upperRightNumber))
         rightTopLabel.text = String(operation(upperLeftNumber, upperRightNumber))
         rightBottomLabel.text = String(operation(lowerLeftNumber, lowerRightNumber))
-        
     }
 
 }

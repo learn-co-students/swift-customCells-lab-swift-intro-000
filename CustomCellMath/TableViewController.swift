@@ -14,15 +14,24 @@ class TableViewController: UITableViewController {
     // i.e. [[1, 2, 3, 4], [5, 3, 1, 0], [5, 2, 6, 6]]
     var numbers: [[Int]] = []
     
-    let reuseIdentifier = "mathCell"
-
     override func viewDidLoad() {
         super.viewDidLoad()
         generateData()
     }
     
+    
+    
+    
+
+
+}
+
+
+
+// MARK: - Generating an array of Data
+extension TableViewController {
+    
     func generateData() {
-        
         for _ in 1...100 {
             var newNumberRow: [Int] = []
             
@@ -33,11 +42,11 @@ class TableViewController: UITableViewController {
             
             numbers.append(newNumberRow)
         }
-        
     }
     
-    func randomNumberFromOneTo(number: Int) -> Int {
+    func randomNumberFromOneTo(_ number: Int) -> Int {
         return Int(arc4random_uniform(UInt32(number)) + 1)
     }
-
+    
+    
 }
