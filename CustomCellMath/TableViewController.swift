@@ -19,9 +19,35 @@ class TableViewController: UITableViewController {
         generateData()
     }
     
-    
-    
-    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return numbers.count
+    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "mathCell", for: indexPath) as! MathTableViewCell
+        let number = numbers[indexPath.row]
+        
+        let firstNumber = number[0]
+        let secondNumber = number[1]
+        let thirdNumber = number[2]
+        let fourthNumber = number[3]
+            
+        cell.firstNumberLabel.text = String(firstNumber)
+        cell.secondNumberLabel.text = String(secondNumber)
+        cell.thirdNumberLabel.text = String(thirdNumber)
+        cell.fourthNumberLabel.text = String(fourthNumber)
+        
+        return cell
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destVC = segue.destination as! DisplayMathViewController
+        if let indexPath = tableView.indexPathForSelectedRow {
+            let selectedRow = numbers[indexPath.row]
+            destVC.numbers = selectedRow
+        }
+    }
 
 
 }
