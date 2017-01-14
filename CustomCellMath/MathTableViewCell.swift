@@ -15,4 +15,5 @@ class MathTableViewCell: UITableViewCell {
     @IBOutlet weak var thirdNumberLabel: UILabel!
     @IBOutlet weak var fourthNumberLabel: UILabel!
 
+    
 }
