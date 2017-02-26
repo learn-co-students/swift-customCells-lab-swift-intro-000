@@ -19,14 +19,37 @@ class TableViewController: UITableViewController {
         generateData()
     }
     
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return numbers.count
+    }
     
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "mathCell", for: indexPath) as! MathTableViewCell
+        
+        let number = numbers[indexPath.row]
+        
+        cell.firstNumberLabel.text? = String(number[0])
+        cell.secondNumberLabel.text? = String(number[1])
+        cell.thirdNumberLabel.text? = String(number[2])
+        cell.fourthNumberLabel.text? = String(number[3])
+        
+        return cell
+    }
     
-
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier != "DisplayMathViewController"{ return }
+        
+        if let dest = segue.destination as? DisplayMathViewController, let indexPath = tableView.indexPathForSelectedRow {
+        
+            dest.numbers = numbers[(indexPath as NSIndexPath).row]
+        }
+    }
 }
-
-
 
 // MARK: - Generating an array of Data
 extension TableViewController {
@@ -47,6 +70,4 @@ extension TableViewController {
     func randomNumberFromOneTo(_ number: Int) -> Int {
         return Int(arc4random_uniform(UInt32(number)) + 1)
     }
-    
-    
 }
