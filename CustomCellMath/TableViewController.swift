@@ -19,11 +19,46 @@ class TableViewController: UITableViewController {
         generateData()
     }
     
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("\(numbers.count)")
+        return numbers.count
+    }
     
     
-    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "mathCell", for: indexPath) as! MathTableViewCell
+        let row = numbers[(indexPath as NSIndexPath).row]
+     //   let animal = animals[(indexPath as NSIndexPath).row]
+        
+        cell.firstNumberLabel.text? = String(row[0])
+        print("\(row))")
+        cell.secondNumberLabel.text? = String(row[1])
+        cell.thirdNumberLabel.text? = String(row[2])
+        cell.fourthNumberLabel.text? = String(row[3])
+        
+        
+        return cell
+    }
 
-
+    
+ 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier != "JJJ" { return }
+        if let dest = segue.destination as? DisplayMathViewController {
+           if let indexPath = tableView.indexPathForSelectedRow {
+            let selectedRow = numbers[indexPath.row]
+            dest.numbers = selectedRow
+            print("\(dest.numbers)")
+        }
+        }
+    }
+    
+    
 }
 
 
