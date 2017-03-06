@@ -72,6 +72,8 @@ class DisplayMathViewController: UIViewController {
     }
     
     func updateLabelsWithOperation(_ operation: (Int, Int) -> Int) {
+        
+      
         let upperLeftNumber = numbers[0]
         let upperRightNumber = numbers[1]
         let lowerLeftNumber = numbers[2]
