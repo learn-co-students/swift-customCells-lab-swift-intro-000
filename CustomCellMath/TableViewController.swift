@@ -20,12 +20,38 @@ class TableViewController: UITableViewController {
     }
     
     
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return numbers.count
+    }
     
-
-
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "mathCell", for: indexPath) as! MathTableViewCell
+        
+        let fourNumbers = numbers[indexPath.row]
+        
+        cell.firstNumberLabel.text? = String(fourNumbers[0])
+        cell.secondNumberLabel.text? = String(fourNumbers[1])
+        cell.thirdNumberLabel.text? = String(fourNumbers[2])
+        cell.fourthNumberLabel.text? = String(fourNumbers[3])
+        
+        
+        return cell
+        
+    }
+       override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+              let destVC = segue.destination as! DisplayMathViewController
+        
+                if let indexPath = tableView.indexPathForSelectedRow {
+                       let selectedRow = numbers[indexPath.row]
+                       destVC.numbers = selectedRow
+                    }
+            }
+    
 }
-
 
 
 // MARK: - Generating an array of Data
