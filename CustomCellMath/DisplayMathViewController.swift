@@ -36,7 +36,7 @@ class DisplayMathViewController: UIViewController {
         displayNumbersInCorrespondingLabels()
         updateLabelsWithOperation(+)
     }
-
+    
     @IBAction func additionTapped(_ sender: AnyObject) {
         updateLabelsWithOperation(+)
         operatorLabel.text = "+"
@@ -51,7 +51,7 @@ class DisplayMathViewController: UIViewController {
         updateLabelsWithOperation(*)
         operatorLabel.text = "x"
     }
-
+    
     @IBAction func divisionTapped(_ sender: AnyObject) {
         updateLabelsWithOperation(/)
         operatorLabel.text = "/"
@@ -86,5 +86,7 @@ class DisplayMathViewController: UIViewController {
         rightTopLabel.text = String(operation(upperLeftNumber, upperRightNumber))
         rightBottomLabel.text = String(operation(lowerLeftNumber, lowerRightNumber))
     }
-
+    
 }
+
+
