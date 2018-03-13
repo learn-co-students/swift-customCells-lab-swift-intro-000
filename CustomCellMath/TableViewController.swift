@@ -12,7 +12,7 @@ class TableViewController: UITableViewController {
     
     // an array of arrays
     // i.e. [[1, 2, 3, 4], [5, 3, 1, 0], [5, 2, 6, 6]]
-    var numbers: [[Int]] = []
+    var numbers:[[Int]] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,9 +20,38 @@ class TableViewController: UITableViewController {
     }
     
     
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return numbers.count
+        
+    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "mathCell", for: indexPath) as! MathTableViewCell
+        
+        let numSet = numbers[indexPath.row]
+        //print("numSet = \(numSet)")
+        
+        cell.firstNumberLabel?.text = "\(numSet[0])"
+        cell.secondNumberLabel?.text = "\(numSet[1])"
+        cell.thirdNumberLabel?.text = "\(numSet[2])"
+        cell.forthNumberLabel?.text = "\(numSet[3])"
+        
+        return cell
+    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier != "toDetailView" { return }
+        if let dest = segue.destination as? DisplayMathViewController {
+            let indexPath = tableView.indexPathForSelectedRow
+            dest.numbers = numbers[(indexPath! as NSIndexPath).row]
+        }
+        
+    }
     
-
 
 }
 
@@ -42,6 +71,7 @@ extension TableViewController {
             
             numbers.append(newNumberRow)
         }
+        //print("numbers = \(numbers)")
     }
     
     func randomNumberFromOneTo(_ number: Int) -> Int {
