@@ -18,12 +18,6 @@ class TableViewController: UITableViewController {
         super.viewDidLoad()
         generateData()
     }
-    
-    
-    
-    
-
-
 }
 
 
@@ -48,5 +42,31 @@ extension TableViewController {
         return Int(arc4random_uniform(UInt32(number)) + 1)
     }
     
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return numbers.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "mathCell", for: indexPath) as! MathTableViewCell
+        let nums = numbers[indexPath.row]
+        
+        cell.firstNumberLabel.text? = String(nums[0])
+        cell.secondNumberLabel.text? = String(nums[1])
+        cell.thirdNumberLabel.text? = String(nums[2])
+        cell.fourthNumberLabel.text? = String(nums[3])
+        
+        return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier != "mathDetails" { return }
+        if let dest = segue.destination as? DisplayMathViewController,
+            let indexPath = tableView.indexPathForSelectedRow {
+        dest.numbers = numbers[indexPath.row]
+        }
+    }
 }
